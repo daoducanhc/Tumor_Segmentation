@@ -9,6 +9,7 @@ import setup.plot as plot
 from torch.utils.data import SubsetRandomSampler
 
 np.random.seed(0)
+torch.manual_seed(0)
 
 DATASET_PATH = '/home/tungdao/Tung/code/ducanh/data/png_dataset'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -18,7 +19,7 @@ def sampler_indices(length):
     indices = list(range(length))
     np.random.shuffle(indices)
     split = int(np.floor(0.1 * length))
-    train_indices, test_indices = indices[:split], indices[:split]
+    train_indices, test_indices = indices[split:], indices[:split]
     return train_indices, test_indices
 
 tumor_dataset = dataset.TumorDataset(DATASET_PATH)

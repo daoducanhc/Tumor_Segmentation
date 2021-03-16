@@ -9,6 +9,7 @@ import setup.plot as plot
 from torch.utils.data import SubsetRandomSampler
 
 np.random.seed(0)
+torch.manual_seed(0)
 
 DATASET_PATH = '/home/tungdao/Tung/code/ducanh/data/png_dataset'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -37,7 +38,7 @@ unet_classifier = classifier.TumorClassifier(unet_model, device)
 unet_classifier.model.load_state_dict(torch.load('state_dict_model.pt'))
 
 unet_model.train()
-unet_classifier.train(train_loader, learning_rate=0.0005, epochs=1, name='state_dict_model.pt')
+unet_classifier.train(train_loader, learning_rate=0.0005, epochs=20, name='state_dict_model.pt')
 
 unet_model.eval()
 unet_score = unet_classifier.test(test_loader)
