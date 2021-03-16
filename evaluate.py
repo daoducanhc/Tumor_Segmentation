@@ -11,6 +11,26 @@ DATASET_PATH = 'png_dataset'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
+def sampler_indices(length):
+    indices = list(range(length))
+    np.random.shuffle(indices)
+    split = int(np.floor(0.1 * length))
+    train_indices, test_indices = indices[:split], indices[:split]
+    return train_indices, test_indices
+
+tumor_dataset = dataset.TumorDataset(DATASET_PATH)
+
+train_indices, test_indices = sampler_indices(len(tumor_dataset))
+train_sampler, test_sampler = SubsetRandomSampler(train_indices), SubsetRandomSampler(test_indices)
+
+train_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=train_sampler)
+test_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=test_sampler)
+
+FILTER_LIST = [16,32,64,128,256]
+unet_model = model.DynamicUNet(FILTER_LIST).to(device)
+# unet_model = model2.ONet(FILTER_LIST)
+unet_classifier = classifier.TumorClassifier(unet_model, device)
+
 unet_classifier.model.load_state_dict(torch.load('state_dict_model.pt'))
 
 unet_model.eval()
