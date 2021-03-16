@@ -7,6 +7,7 @@ import setup.model2 as model2
 import setup.classifier as classifier
 import setup.plot as plot
 from torch.utils.data import SubsetRandomSampler
+
 DATASET_PATH = '/home/tungdao/Tung/code/ducanh/data/png_dataset'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
