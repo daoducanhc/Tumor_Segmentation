@@ -4,63 +4,108 @@ import torch.optim as optim
 import numpy as np
 import time
 
-
 class TumorClassifier():
     def __init__(self, model, device):
         self.model = model
         self.device = device
         self.criterion = DiceBCELoss()
 
-    def epoch_fit(self, trainLoader):
-        epoch_loss, iteration = 0, 0
-        for data in trainLoader:
-            iteration+=1
-            image = data['image'].to(self.device)
-            mask = data['mask'].to(self.device)
+    # def epoch_fit(self, trainLoader, validLoader):
+    #     dataLoader = {
+    #         'train': trainLoader,
+    #         'valid': validLoader
+    #     }
+        
+    #     for phase in ['train', 'valid']:
+    #         epoch_loss, iteration = 0, 0
 
-            self.optimizer.zero_grad()
+    #         if phase == 'train':
+    #             self.scheduler.step()
+    #             self.model.train()
+    #         else:
+    #             self.model.eval()
 
-            output = self.model(image)
+    #         for data in dataLoader[phase]:
+    #             iteration+=1
+    #             image = data['image'].to(self.device)
+    #             mask = data['mask'].to(self.device)
 
-            loss_val = self.criterion(output, mask)
-            loss_val.backward()
+    #             self.optimizer.zero_grad()
 
-            self.optimizer.step()
+    #             with torch.set_grad_enabled(phase == 'train'):
+    #                 output = self.model(image)
 
-            epoch_loss += loss_val.item()
-        epoch_loss /= (iteration * trainLoader.batch_size)
-        return epoch_loss
+    #                 loss_val = self.criterion(output, mask)
+    #                 if phase == 'train':
+    #                     loss_val.backward()
+    #                     self.optimizer.step()
 
-    def train(self, trainLoader, learning_rate=0.001, epochs=20, name="state_dict_model.pt"):
-        self.model.train()
+    #             epoch_loss += loss_val.item()
 
+    #             if last_loss > epoch_loss:
+    #             if last_loss != 1000:
+    #                 torch.save(self.model.state_dict(), name)
+    #                 print('Saved')
+    #             last_loss = epoch_loss
+    #         epoch_loss /= (iteration * dataLoader[phase].batch_size)
+    #         print('{} Loss:{:.7f}'.format(phase, epoch_loss))
+
+    def train(self, trainLoader, validLoader, learning_rate=0.001, epochs=20, name="state_dict_model.pt"):
         last_loss = 1000
 
+        dataLoader = {
+            'train': trainLoader,
+            'valid': validLoader
+        }
+
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
-        self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-            self.optimizer, factor=0.6, patience=1, verbose=True)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=7, gamma=0.1)
         print('Starting...')
 
         for epoch in range(epochs):
 
             print("\nEpoch {}/{}:".format(epoch+1, epochs))
             epoch_time = time.time()
-            epoch_loss = self.epoch_fit(trainLoader)
+            # self.epoch_fit(trainLoader, validLoader)
+            
+            for phase in ['train', 'valid']:
+                epoch_loss, iteration = 0, 0
 
-            self.scheduler.step(epoch_loss)
+                if phase == 'train':
+                    self.scheduler.step()
+                    self.model.train()
+                else:
+                    self.model.eval()
 
-            print('Loss:{:.7f}'.format(epoch_loss))
+                for data in dataLoader[phase]:
+                    iteration+=1
+                    image = data['image'].to(self.device)
+                    mask = data['mask'].to(self.device)
+
+                    self.optimizer.zero_grad()
+
+                    with torch.set_grad_enabled(phase == 'train'):
+                        output = self.model(image)
+
+                        loss_val = self.criterion(output, mask)
+                        if phase == 'train':
+                            loss_val.backward()
+                            self.optimizer.step()
+
+                    epoch_loss += loss_val.item()
+                    
+                    if phase == 'valid' and last_loss > epoch_loss:
+                        if last_loss != 1000:
+                            torch.save(self.model.state_dict(), name)
+                            print('Saved')
+                        last_loss = epoch_loss
+                epoch_loss /= (iteration * dataLoader[phase].batch_size)
+                print('{} Loss:{:.7f}'.format(phase, epoch_loss))
 
             end = time.time() - epoch_time
             m = end//60
             s = end - m*60
             print("Time {:.0f}m {:.0f}s".format(m, s))
-
-            if last_loss > epoch_loss:
-                if last_loss != 1000:
-                    torch.save(self.model.state_dict(), name)
-                    print('Saved')
-                last_loss = epoch_loss
 
     def test(self, testLoader, threshold=0.5):
         self.model.eval()
