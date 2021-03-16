@@ -94,13 +94,14 @@ class TumorClassifier():
 
                     epoch_loss += loss_val.item()
                     
-                    if phase == 'valid' and last_loss > epoch_loss:
-                        if last_loss != 1000:
-                            torch.save(self.model.state_dict(), name)
-                            print('Saved')
-                        last_loss = epoch_loss
+                    
                 epoch_loss /= (iteration * dataLoader[phase].batch_size)
                 print('{} Loss:{:.7f}'.format(phase, epoch_loss))
+                if phase == 'valid' and last_loss > epoch_loss:
+                    if last_loss != 1000:
+                        torch.save(self.model.state_dict(), name)
+                        print('Saved')
+                    last_loss = epoch_loss
 
             end = time.time() - epoch_time
             m = end//60

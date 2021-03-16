@@ -25,7 +25,7 @@ def sampler_indices(length):
     index2 = int(np.floor(0.2 * length))
     test_indices, valid_indices, train_indices = indices[:index1], \
                                                 indices[index1:index2], \
-                                                indices[index2:] \
+                                                indices[index2:]
     return train_indices, valid_indices, test_indices
 
 tumor_dataset = dataset.TumorDataset(DATASET_PATH)
