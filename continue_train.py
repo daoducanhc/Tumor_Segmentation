@@ -34,6 +34,8 @@ unet_model = model.DynamicUNet(FILTER_LIST).to(device)
 # unet_model = model2.ONet(FILTER_LIST)
 unet_classifier = classifier.TumorClassifier(unet_model, device)
 
+unet_classifier.model.load_state_dict(torch.load('state_dict_model.pt'))
+
 unet_model.train()
 unet_classifier.train(train_loader, learning_rate=0.0005, epochs=1, name='state_dict_model.pt')
 
