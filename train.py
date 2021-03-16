@@ -22,7 +22,6 @@ def sampler_indices(length):
     np.random.shuffle(indices)
     split = int(np.floor(0.1 * length))
     train_indices, test_indices = indices[split:], indices[:split]
-    split = int(np.floor(0.25 * ))
     return train_indices, test_indices
 
 tumor_dataset = dataset.TumorDataset(DATASET_PATH)
@@ -39,7 +38,7 @@ unet_model = model.DynamicUNet(FILTER_LIST).to(device)
 unet_classifier = classifier.TumorClassifier(unet_model, device)
 
 unet_model.train()
-unet_classifier.train(train_loader, learning_rate=0.0005, epochs=1, name='state_dict_model.pt')
+unet_classifier.train(train_loader, learning_rate=0.001, epochs=20, name='state_dict_model.pt')
 
 unet_model.eval()
 unet_score = unet_classifier.test(test_loader)

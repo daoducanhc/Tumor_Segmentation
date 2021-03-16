@@ -38,7 +38,7 @@ class TumorClassifier():
 
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-            self.optimizer, factor=0.5, patience=2, verbose=True)
+            self.optimizer, factor=0.6, patience=1, verbose=True)
         print('Starting...')
 
         for epoch in range(epochs):
@@ -52,9 +52,9 @@ class TumorClassifier():
             print('Loss:{:.7f}'.format(epoch_loss))
 
             end = time.time() - epoch_time
-            h = end//3600
-            m = (end - h*3600)//60
-            print("Time {:.0f}h {:.0f}m".format(h, m))
+            m = end//60
+            s = end - m*60
+            print("Time {:.0f}m {:.0f}s".format(m, s))
 
             if last_loss > epoch_loss:
                 if last_loss != 1000:

@@ -19,7 +19,7 @@ def sampler_indices(length):
     indices = list(range(length))
     np.random.shuffle(indices)
     split = int(np.floor(0.1 * length))
-    train_indices, test_indices = indices[:split], indices[:split]
+    train_indices, test_indices = indices[split:], indices[:split]
     return train_indices, test_indices
 
 tumor_dataset = dataset.TumorDataset(DATASET_PATH)
