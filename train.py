@@ -12,7 +12,7 @@ np.random.seed(0)
 torch.manual_seed(0)
 
 DATASET_PATH = '/home/tungdao/Tung/code/ducanh/data/png_dataset'
-BATCH_SIZE = 10
+BATCH_SIZE = 16
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
@@ -44,7 +44,7 @@ unet_model = ResUNet.ResUNet(FILTER_LIST).to(device)
 unet_classifier = classifier.TumorClassifier(unet_model, device)
 
 unet_model.train()
-unet_classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=40, name='ResUNet.pt')
+unet_classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=30, name='ResUNet.pt')
 
 unet_model.eval()
 unet_score = unet_classifier.test(test_loader)
