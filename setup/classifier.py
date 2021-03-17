@@ -10,46 +10,6 @@ class TumorClassifier():
         self.device = device
         self.criterion = DiceBCELoss()
 
-    # def epoch_fit(self, trainLoader, validLoader):
-    #     dataLoader = {
-    #         'train': trainLoader,
-    #         'valid': validLoader
-    #     }
-        
-    #     for phase in ['train', 'valid']:
-    #         epoch_loss, iteration = 0, 0
-
-    #         if phase == 'train':
-    #             self.scheduler.step()
-    #             self.model.train()
-    #         else:
-    #             self.model.eval()
-
-    #         for data in dataLoader[phase]:
-    #             iteration+=1
-    #             image = data['image'].to(self.device)
-    #             mask = data['mask'].to(self.device)
-
-    #             self.optimizer.zero_grad()
-
-    #             with torch.set_grad_enabled(phase == 'train'):
-    #                 output = self.model(image)
-
-    #                 loss_val = self.criterion(output, mask)
-    #                 if phase == 'train':
-    #                     loss_val.backward()
-    #                     self.optimizer.step()
-
-    #             epoch_loss += loss_val.item()
-
-    #             if last_loss > epoch_loss:
-    #             if last_loss != 1000:
-    #                 torch.save(self.model.state_dict(), name)
-    #                 print('Saved')
-    #             last_loss = epoch_loss
-    #         epoch_loss /= (iteration * dataLoader[phase].batch_size)
-    #         print('{} Loss:{:.7f}'.format(phase, epoch_loss))
-
     def train(self, trainLoader, validLoader, learning_rate=0.001, epochs=20, name="state_dict_model.pt"):
         last_loss = 1000
 
@@ -59,7 +19,7 @@ class TumorClassifier():
         }
 
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
-        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=7, gamma=0.1)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=5, gamma=0.2)
         print('Starting...')
 
         for epoch in range(epochs):

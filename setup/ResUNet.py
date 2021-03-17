@@ -44,7 +44,7 @@ class DoubleConv(nn.Module):
     def forward(self, x):
         return self.double_conv(x)
 
-class ONet(nn.Module):
+class ResUNet(nn.Module):
     def __init__(self, filters, input_channels=1, output_channels=1):
         super(ONet, self).__init__()
         if len(filters) != 5:

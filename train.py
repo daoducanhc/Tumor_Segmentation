@@ -2,8 +2,8 @@ import os
 import torch
 import numpy as np
 import setup.dataset as dataset
-import setup.model as model
-import setup.model2 as model2
+import setup.UNet as UNet
+import setup.ResUNet as ResUNet
 import setup.classifier as classifier
 import setup.plot as plot
 from torch.utils.data import SubsetRandomSampler
@@ -12,7 +12,6 @@ np.random.seed(0)
 torch.manual_seed(0)
 
 DATASET_PATH = '/home/tungdao/Tung/code/ducanh/data/png_dataset'
-# DATASET_PATH = 'png_dataset'
 BATCH_SIZE = 10
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -40,12 +39,12 @@ valid_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=BATCH_SIZE,
 test_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=test_sampler)
 
 FILTER_LIST = [16,32,64,128,256]
-#unet_model = model.DynamicUNet(FILTER_LIST).to(device)
-unet_model = model2.ONet(FILTER_LIST).to(device)
+# unet_model = UNet.DynamicUNet(FILTER_LIST).to(device)
+unet_model = ResUNet.ResUNet(FILTER_LIST).to(device)
 unet_classifier = classifier.TumorClassifier(unet_model, device)
 
 unet_model.train()
-unet_classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=20, name='state_dict_modelONet.pt')
+unet_classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=40, name='ResUNet.pt')
 
 unet_model.eval()
 unet_score = unet_classifier.test(test_loader)
