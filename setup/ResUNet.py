@@ -75,6 +75,6 @@ class ResUNet(nn.Module):
         x = self.up_conv1(x, skip1_out)
         x = self.conv_last(x)
         # x = F.sigmoid(x)
-        x = nn.Sigmoid(x)
+        x = nn.Sigmoid()(x)
 
         return x
