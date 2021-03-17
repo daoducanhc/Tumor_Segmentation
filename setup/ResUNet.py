@@ -46,7 +46,7 @@ class DoubleConv(nn.Module):
 
 class ResUNet(nn.Module):
     def __init__(self, filters, input_channels=1, output_channels=1):
-        super(ONet, self).__init__()
+        super(ResUNet, self).__init__()
         if len(filters) != 5:
             raise Exception("Filter list size {s}, expected 5!".format(len(filters)))
         self.down_conv1 = ResBlock(input_channels, filters[0])
