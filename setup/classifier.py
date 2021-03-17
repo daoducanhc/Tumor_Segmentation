@@ -18,6 +18,11 @@ class TumorClassifier():
             'valid': validLoader
         }
 
+        history = {
+            'train': list(),
+            'valid': list()
+        }
+
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
         self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=5, gamma=0.2)
         print('Starting...')
@@ -56,6 +61,8 @@ class TumorClassifier():
                     
                     
                 epoch_loss /= (iteration * dataLoader[phase].batch_size)
+                history[phase].append(epoch_loss)
+
                 print('{} Loss:{:.7f}'.format(phase, epoch_loss))
                 if phase == 'valid' and last_loss > epoch_loss:
                     if last_loss != 1000:
@@ -67,6 +74,8 @@ class TumorClassifier():
             m = end//60
             s = end - m*60
             print("Time {:.0f}m {:.0f}s".format(m, s))
+        return history
+
 
     def test(self, testLoader, threshold=0.5):
         self.model.eval()
