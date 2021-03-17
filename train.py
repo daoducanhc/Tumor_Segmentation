@@ -44,7 +44,7 @@ model = ResUNet.ResUNet(FILTER_LIST).to(device)
 classifier = classifier.TumorClassifier(model, device)
 
 model.train()
-history = classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=50, name='ResUNet')
+history = classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=35, name='ResUNet')
 
 model.eval()
 score = classifier.test(test_loader)
