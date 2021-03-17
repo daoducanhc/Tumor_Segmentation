@@ -62,7 +62,6 @@ class ResUNet(nn.Module):
         self.up_conv1 = UpBlock(filters[1] + filters[0], filters[0])
 
         self.conv_last = nn.Conv2d(filters[0], output_channels, kernel_size=1)
-        # self.input_output_conv = nn.Conv2d(2, output_channels, kernel_size=1)
 
     def forward(self, inputs):
         x, skip1_out = self.down_conv1(inputs)
@@ -75,7 +74,7 @@ class ResUNet(nn.Module):
         x = self.up_conv2(x, skip2_out)
         x = self.up_conv1(x, skip1_out)
         x = self.conv_last(x)
-        x = F.sigmoid(x)
-        # input_output = torch.cat(x, dim=1)
-        # x = self.input_output_conv(input_output)
+        # x = F.sigmoid(x)
+        x = nn.Sigmoid(x)
+
         return x

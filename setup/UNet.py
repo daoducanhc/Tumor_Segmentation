@@ -96,6 +96,7 @@ class DynamicUNet(nn.Module):
         conv9 = F.relu(self.conv9_2(conv9))
 
         # Output Part of Network.
-        output = F.sigmoid(self.conv10(conv9))
+        # output = F.sigmoid(self.conv10(conv9))
+        output = nn.Sigmoid(self.conv10(conv9))
 
         return output
