@@ -1,0 +1,193 @@
+Epoch 1/35:
+/home/tungdao/anaconda3/envs/ducanh/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+train Loss:0.0793287
+valid Loss:0.0725509
+Time 1m 44s
+
+Epoch 2/35:
+train Loss:0.0605993
+valid Loss:0.0543145
+Saved
+Time 1m 45s
+
+Epoch 3/35:
+train Loss:0.0456960
+valid Loss:0.0441978
+Saved
+Time 1m 45s
+
+Epoch 4/35:
+train Loss:0.0363492
+valid Loss:0.0423832
+Saved
+Time 1m 45s
+
+Epoch 5/35:
+train Loss:0.0315867
+valid Loss:0.0425025
+Time 1m 45s
+
+Epoch 6/35:
+train Loss:0.0298506
+valid Loss:0.0412061
+Saved
+Time 1m 45s
+
+Epoch 7/35:
+train Loss:0.0280334
+valid Loss:0.0303076
+Saved
+Time 1m 45s
+
+Epoch 8/35:
+train Loss:0.0262704
+valid Loss:0.0250483
+Saved
+Time 1m 45s
+
+Epoch 9/35:
+train Loss:0.0254439
+valid Loss:0.0310943
+Time 1m 46s
+
+Epoch 10/35:
+train Loss:0.0246310
+valid Loss:0.0264092
+Time 1m 45s
+
+Epoch 11/35:
+train Loss:0.0237591
+valid Loss:0.0494006
+Time 1m 46s
+
+Epoch 12/35:
+train Loss:0.0234433
+valid Loss:0.0246408
+Saved
+Time 1m 45s
+
+Epoch 13/35:
+train Loss:0.0227282
+valid Loss:0.0236533
+Saved
+Time 1m 46s
+
+Epoch 14/35:
+train Loss:0.0227292
+valid Loss:0.0302880
+Time 1m 46s
+
+Epoch 15/35:
+train Loss:0.0200190
+valid Loss:0.0210318
+Saved
+Time 1m 46s
+
+Epoch 16/35:
+train Loss:0.0195835
+valid Loss:0.0198007
+Saved
+Time 1m 46s
+
+Epoch 17/35:
+train Loss:0.0190960
+valid Loss:0.0183836
+Saved
+Time 1m 46s
+
+Epoch 18/35:
+train Loss:0.0189899
+valid Loss:0.0186751
+Time 1m 46s
+
+Epoch 19/35:
+train Loss:0.0188665
+valid Loss:0.0185779
+Time 1m 46s
+
+Epoch 20/35:
+train Loss:0.0186655
+valid Loss:0.0208862
+Time 1m 42s
+
+Epoch 21/35:
+train Loss:0.0181692
+valid Loss:0.0183459
+Saved
+Time 1m 42s
+
+Epoch 22/35:
+train Loss:0.0179353
+valid Loss:0.0197401
+Time 1m 42s
+
+Epoch 23/35:
+train Loss:0.0180860
+valid Loss:0.0181816
+Saved
+Time 1m 42s
+
+Epoch 24/35:
+train Loss:0.0182405
+valid Loss:0.0196758
+Time 1m 42s
+
+Epoch 25/35:
+train Loss:0.0178372
+valid Loss:0.0173061
+Saved
+Time 1m 42s
+
+Epoch 26/35:
+train Loss:0.0178993
+valid Loss:0.0194620
+Time 1m 42s
+
+Epoch 27/35:
+train Loss:0.0176300
+valid Loss:0.0190306
+Time 1m 42s
+
+Epoch 28/35:
+train Loss:0.0172328
+valid Loss:0.0175711
+Time 1m 42s
+
+Epoch 29/35:
+train Loss:0.0174129
+valid Loss:0.0196911
+Time 1m 42s
+
+Epoch 30/35:
+train Loss:0.0168272
+valid Loss:0.0174615
+Time 1m 42s
+
+Epoch 31/35:
+train Loss:0.0162979
+valid Loss:0.0175543
+Time 1m 42s
+
+Epoch 32/35:
+train Loss:0.0162716
+valid Loss:0.0173539
+Time 1m 42s
+
+Epoch 33/35:
+train Loss:0.0161796
+valid Loss:0.0170929
+Saved
+Time 1m 42s
+
+Epoch 34/35:
+train Loss:0.0161312
+valid Loss:0.0184779
+Time 1m 42s
+
+Epoch 35/35:
+train Loss:0.0161418
+valid Loss:0.0172593
+Time 1m 42s
+
+Dice Score 0.761619520854447

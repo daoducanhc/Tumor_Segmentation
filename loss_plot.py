@@ -1,9 +1,9 @@
 import json
 
-name = 'ResUNet'
-# name = 'UNet'
+history_path = 'outputs/ResUNet.json'
+# history_path = 'outputs/UNet.json'
 
-history_file = open(name + '.json', "r")
+history_file = open(history_path, "r")
 history = history_file.read()
 history_file.close()
 

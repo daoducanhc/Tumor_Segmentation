@@ -33,12 +33,15 @@ test_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=t
 FILTER_LIST = [16,32,64,128,256]
 
 #model = UNet.DynamicUNet(FILTER_LIST).to(device)
-#name = 'UNet'
+#path = 'outputs/UNet.pt'
 model = ResUNet.ResUNet(FILTER_LIST).to(device)
-name = 'ResUNet'
+path = 'outputs/ResUNet.pt'
 
 classifier = classifier.TumorClassifier(model, device)
-classifier.model.load_state_dict(torch.load(name + '.pt'))
+if device == 'cpu':
+    classifier.model.load_state_dict(torch.load(path, map_location='cpu'))
+else:
+    classifier.model.load_state_dict(torch.load(path))
 
 model.eval()
 score = classifier.test(test_loader)
