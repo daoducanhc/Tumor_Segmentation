@@ -2,9 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print(device)
-
 class ResBlock(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(ResBlock, self).__init__()
@@ -68,7 +65,6 @@ class ONet(nn.Module):
         # self.input_output_conv = nn.Conv2d(2, output_channels, kernel_size=1)
 
     def forward(self, inputs):
-        inputs = inputs.to(device)
         x, skip1_out = self.down_conv1(inputs)
         x, skip2_out = self.down_conv2(x)   
         x, skip3_out = self.down_conv3(x)

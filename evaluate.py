@@ -32,7 +32,7 @@ test_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=t
 
 FILTER_LIST = [16,32,64,128,256]
 #unet_model = model.DynamicUNet(FILTER_LIST).to(device)
-unet_model = model2.ONet(FILTER_LIST)
+unet_model = model2.ONet(FILTER_LIST).to(device)
 unet_classifier = classifier.TumorClassifier(unet_model, device)
 
 unet_classifier.model.load_state_dict(torch.load('state_dict_modelONet.pt'))
