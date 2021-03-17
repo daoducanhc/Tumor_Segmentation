@@ -39,13 +39,13 @@ valid_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=BATCH_SIZE,
 test_loader = torch.utils.data.DataLoader(tumor_dataset, batch_size=1, sampler=test_sampler)
 
 FILTER_LIST = [16,32,64,128,256]
-# unet_model = UNet.DynamicUNet(FILTER_LIST).to(device)
-unet_model = ResUNet.ResUNet(FILTER_LIST).to(device)
-unet_classifier = classifier.TumorClassifier(unet_model, device)
+# model = UNet.DynamicUNet(FILTER_LIST).to(device)
+model = ResUNet.ResUNet(FILTER_LIST).to(device)
+classifier = classifier.TumorClassifier(model, device)
 
-unet_model.train()
-unet_classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=30, name='ResUNet.pt')
+model.train()
+history = classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=50, name='ResUNet')
 
-unet_model.eval()
-unet_score = unet_classifier.test(test_loader)
-print(f'\n\nDice Score {unet_score}')
+model.eval()
+score = classifier.test(test_loader)
+print(f'\n\nDice Score {score}')

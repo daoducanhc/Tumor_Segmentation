@@ -10,7 +10,7 @@ class TumorClassifier():
         self.device = device
         self.criterion = DiceBCELoss()
 
-    def train(self, trainLoader, validLoader, learning_rate=0.001, epochs=20, name="state_dict_model.pt"):
+    def train(self, trainLoader, validLoader, learning_rate=0.001, epochs=20, name="state_dict_model"):
         last_loss = 1000
 
         dataLoader = {
@@ -24,7 +24,7 @@ class TumorClassifier():
         }
 
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
-        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=5, gamma=0.3)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=6, gamma=0.5)
         print('Starting...')
 
         for epoch in range(epochs):
@@ -66,7 +66,7 @@ class TumorClassifier():
                 print('{} Loss:{:.7f}'.format(phase, epoch_loss))
                 if phase == 'valid' and last_loss > epoch_loss:
                     if last_loss != 1000:
-                        torch.save(self.model.state_dict(), name)
+                        torch.save(self.model.state_dict(), name + '.pt')
                         print('Saved')
                     last_loss = epoch_loss
 
@@ -74,7 +74,11 @@ class TumorClassifier():
             m = end//60
             s = end - m*60
             print("Time {:.0f}m {:.0f}s".format(m, s))
-        return history
+
+        import json
+        history_file = open(name + '.json', "w")
+        json.dump(history, history_file)
+        history_file.close()
 
 
     def test(self, testLoader, threshold=0.5):
