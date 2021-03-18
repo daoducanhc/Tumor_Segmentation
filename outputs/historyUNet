@@ -1,0 +1,536 @@
+cuda
+Starting...
+
+Epoch 1/100:
+/home/tungdao/anaconda3/envs/ducanh/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+train Loss:0.0662636
+valid Loss:0.0577517
+Time 1m 26s
+
+Epoch 2/100:
+train Loss:0.0578662
+valid Loss:0.0536094
+Saved
+Time 1m 27s
+
+Epoch 3/100:
+train Loss:0.0550758
+valid Loss:0.0532310
+Saved
+Time 1m 27s
+
+Epoch 4/100:
+train Loss:0.0506431
+valid Loss:0.0459257
+Saved
+Time 1m 27s
+
+Epoch 5/100:
+train Loss:0.0485791
+valid Loss:0.0478971
+Time 1m 28s
+
+Epoch 6/100:
+train Loss:0.0471066
+valid Loss:0.0441512
+Saved
+Time 1m 28s
+
+Epoch 7/100:
+train Loss:0.0452203
+valid Loss:0.0485840
+Time 1m 28s
+
+Epoch 8/100:
+train Loss:0.0441167
+valid Loss:0.0383249
+Saved
+Time 1m 28s
+
+Epoch 9/100:
+train Loss:0.0431402
+valid Loss:0.0388552
+Time 1m 28s
+
+Epoch 10/100:
+train Loss:0.0412313
+valid Loss:0.0407012
+Time 1m 28s
+
+Epoch 11/100:
+train Loss:0.0406210
+valid Loss:0.0375530
+Saved
+Time 1m 31s
+
+Epoch 12/100:
+train Loss:0.0388094
+valid Loss:0.0335611
+Saved
+Time 1m 29s
+
+Epoch 13/100:
+train Loss:0.0381592
+valid Loss:0.0342817
+Time 1m 29s
+
+Epoch 14/100:
+train Loss:0.0364638
+valid Loss:0.0316812
+Saved
+Time 1m 29s
+
+Epoch 15/100:
+train Loss:0.0349634
+valid Loss:0.0297719
+Saved
+Time 1m 29s
+
+Epoch 16/100:
+train Loss:0.0336611
+valid Loss:0.0314432
+Time 1m 29s
+
+Epoch 17/100:
+train Loss:0.0330005
+valid Loss:0.0293422
+Saved
+Time 1m 30s
+
+Epoch 18/100:
+train Loss:0.0326811
+valid Loss:0.0298526
+Time 1m 29s
+
+Epoch 19/100:
+train Loss:0.0323444
+valid Loss:0.0309544
+Time 1m 29s
+
+Epoch 20/100:
+train Loss:0.0312207
+valid Loss:0.0284898
+Saved
+Time 1m 29s
+
+Epoch 21/100:
+train Loss:0.0303745
+valid Loss:0.0278996
+Saved
+Time 1m 29s
+
+Epoch 22/100:
+train Loss:0.0304132
+valid Loss:0.0276678
+Saved
+Time 1m 29s
+
+Epoch 23/100:
+train Loss:0.0321900
+valid Loss:0.0288629
+Time 1m 29s
+
+Epoch 24/100:
+train Loss:0.0287276
+valid Loss:0.0266123
+Saved
+Time 1m 29s
+
+Epoch 25/100:
+train Loss:0.0286211
+valid Loss:0.0263645
+Saved
+Time 1m 31s
+
+Epoch 26/100:
+train Loss:0.0279136
+valid Loss:0.0256396
+Saved
+Time 1m 36s
+
+Epoch 27/100:
+train Loss:0.0271784
+valid Loss:0.0236521
+Saved
+Time 1m 35s
+
+Epoch 28/100:
+train Loss:0.0270718
+valid Loss:0.0260893
+Time 1m 29s
+
+Epoch 29/100:
+train Loss:0.0273824
+valid Loss:0.0239588
+Time 1m 29s
+
+Epoch 30/100:
+train Loss:0.0242674
+valid Loss:0.0217725
+Saved
+Time 1m 29s
+
+Epoch 31/100:
+train Loss:0.0236084
+valid Loss:0.0229540
+Time 1m 29s
+
+Epoch 32/100:
+train Loss:0.0229142
+valid Loss:0.0217914
+Time 1m 29s
+
+Epoch 33/100:
+train Loss:0.0227705
+valid Loss:0.0215297
+Saved
+Time 1m 29s
+
+Epoch 34/100:
+train Loss:0.0229122
+valid Loss:0.0233387
+Time 1m 29s
+
+Epoch 35/100:
+train Loss:0.0226370
+valid Loss:0.0242920
+Time 1m 29s
+
+Epoch 36/100:
+train Loss:0.0222863
+valid Loss:0.0230496
+Time 1m 29s
+
+Epoch 37/100:
+train Loss:0.0226725
+valid Loss:0.0223063
+Time 1m 29s
+
+Epoch 38/100:
+train Loss:0.0218990
+valid Loss:0.0211639
+Saved
+Time 1m 29s
+
+Epoch 39/100:
+train Loss:0.0219362
+valid Loss:0.0209388
+Saved
+Time 1m 29s
+
+Epoch 40/100:
+train Loss:0.0214980
+valid Loss:0.0226264
+Time 1m 29s
+
+Epoch 41/100:
+train Loss:0.0215376
+valid Loss:0.0201797
+Saved
+Time 1m 29s
+
+Epoch 42/100:
+train Loss:0.0215749
+valid Loss:0.0206193
+Time 1m 29s
+
+Epoch 43/100:
+train Loss:0.0211025
+valid Loss:0.0200794
+Saved
+Time 1m 29s
+
+Epoch 44/100:
+train Loss:0.0207876
+valid Loss:0.0214961
+Time 1m 29s
+
+Epoch 45/100:
+train Loss:0.0208915
+valid Loss:0.0205965
+Time 1m 29s
+
+Epoch 46/100:
+train Loss:0.0206470
+valid Loss:0.0198498
+Saved
+Time 1m 29s
+
+Epoch 47/100:
+train Loss:0.0205416
+valid Loss:0.0207454
+Time 1m 29s
+
+Epoch 48/100:
+train Loss:0.0207810
+valid Loss:0.0203394
+Time 1m 29s
+
+Epoch 49/100:
+train Loss:0.0202045
+valid Loss:0.0189698
+Saved
+Time 1m 29s
+
+Epoch 50/100:
+train Loss:0.0205760
+valid Loss:0.0219524
+Time 1m 29s
+
+Epoch 51/100:
+train Loss:0.0204002
+valid Loss:0.0201570
+Time 1m 29s
+
+Epoch 52/100:
+train Loss:0.0200698
+valid Loss:0.0212478
+Time 1m 29s
+
+Epoch 53/100:
+train Loss:0.0200579
+valid Loss:0.0196093
+Time 1m 30s
+
+Epoch 54/100:
+train Loss:0.0197674
+valid Loss:0.0212867
+Time 1m 32s
+
+Epoch 55/100:
+train Loss:0.0196035
+valid Loss:0.0200265
+Time 1m 33s
+
+Epoch 56/100:
+train Loss:0.0193774
+valid Loss:0.0193508
+Time 1m 29s
+
+Epoch 57/100:
+train Loss:0.0194221
+valid Loss:0.0208245
+Time 1m 29s
+
+Epoch 58/100:
+train Loss:0.0195102
+valid Loss:0.0200605
+Time 1m 29s
+
+Epoch 59/100:
+train Loss:0.0196089
+valid Loss:0.0205605
+Time 1m 29s
+
+Epoch 60/100:
+train Loss:0.0182849
+valid Loss:0.0213941
+Time 1m 29s
+
+Epoch 61/100:
+train Loss:0.0181817
+valid Loss:0.0200472
+Time 1m 31s
+
+Epoch 62/100:
+train Loss:0.0179336
+valid Loss:0.0195787
+Time 1m 29s
+
+Epoch 63/100:
+train Loss:0.0179615
+valid Loss:0.0190915
+Time 1m 29s
+
+Epoch 64/100:
+train Loss:0.0177856
+valid Loss:0.0200656
+Time 1m 30s
+
+Epoch 65/100:
+train Loss:0.0175449
+valid Loss:0.0186409
+Saved
+Time 1m 33s
+
+Epoch 66/100:
+train Loss:0.0177271
+valid Loss:0.0211864
+Time 1m 34s
+
+Epoch 67/100:
+train Loss:0.0175453
+valid Loss:0.0198101
+Time 1m 35s
+
+Epoch 68/100:
+train Loss:0.0176880
+valid Loss:0.0194320
+Time 1m 35s
+
+Epoch 69/100:
+train Loss:0.0175133
+valid Loss:0.0187161
+Time 1m 35s
+
+Epoch 70/100:
+train Loss:0.0176213
+valid Loss:0.0186391
+Saved
+Time 1m 36s
+
+Epoch 71/100:
+train Loss:0.0177166
+valid Loss:0.0201403
+Time 1m 36s
+
+Epoch 72/100:
+train Loss:0.0171580
+valid Loss:0.0190481
+Time 1m 36s
+
+Epoch 73/100:
+train Loss:0.0170895
+valid Loss:0.0193399
+Time 1m 32s
+
+Epoch 74/100:
+train Loss:0.0171833
+valid Loss:0.0174011
+Saved
+Time 1m 29s
+
+Epoch 75/100:
+train Loss:0.0169035
+valid Loss:0.0185541
+Time 1m 29s
+
+Epoch 76/100:
+train Loss:0.0169607
+valid Loss:0.0184089
+Time 1m 29s
+
+Epoch 77/100:
+train Loss:0.0166471
+valid Loss:0.0178999
+Time 1m 30s
+
+Epoch 78/100:
+train Loss:0.0168149
+valid Loss:0.0196832
+Time 1m 29s
+
+Epoch 79/100:
+train Loss:0.0166928
+valid Loss:0.0195383
+Time 1m 29s
+
+Epoch 80/100:
+train Loss:0.0166810
+valid Loss:0.0188887
+Time 1m 29s
+
+Epoch 81/100:
+train Loss:0.0168211
+valid Loss:0.0184275
+Time 1m 29s
+
+Epoch 82/100:
+train Loss:0.0168525
+valid Loss:0.0182012
+Time 1m 29s
+
+Epoch 83/100:
+train Loss:0.0167668
+valid Loss:0.0179975
+Time 1m 29s
+
+Epoch 84/100:
+train Loss:0.0167347
+valid Loss:0.0189560
+Time 1m 29s
+
+Epoch 85/100:
+train Loss:0.0164624
+valid Loss:0.0186914
+Time 1m 29s
+
+Epoch 86/100:
+train Loss:0.0165648
+valid Loss:0.0180269
+Time 1m 29s
+
+Epoch 87/100:
+train Loss:0.0166574
+valid Loss:0.0185037
+Time 1m 29s
+
+Epoch 88/100:
+train Loss:0.0165032
+valid Loss:0.0176040
+Time 1m 29s
+
+Epoch 89/100:
+train Loss:0.0163979
+valid Loss:0.0180359
+Time 1m 29s
+
+Epoch 90/100:
+train Loss:0.0163119
+valid Loss:0.0187474
+Time 1m 30s
+
+Epoch 91/100:
+train Loss:0.0161183
+valid Loss:0.0188562
+Time 1m 29s
+
+Epoch 92/100:
+train Loss:0.0162418
+valid Loss:0.0180963
+Time 1m 29s
+
+Epoch 93/100:
+train Loss:0.0160686
+valid Loss:0.0181445
+Time 1m 29s
+
+Epoch 94/100:
+train Loss:0.0158501
+valid Loss:0.0193187
+Time 1m 29s
+
+Epoch 95/100:
+train Loss:0.0161571
+valid Loss:0.0177300
+Time 1m 29s
+
+Epoch 96/100:
+train Loss:0.0159314
+valid Loss:0.0184510
+Time 1m 29s
+
+Epoch 97/100:
+train Loss:0.0161873
+valid Loss:0.0182627
+Time 1m 30s
+
+Epoch 98/100:
+train Loss:0.0157205
+valid Loss:0.0178944
+Time 1m 31s
+
+Epoch 99/100:
+train Loss:0.0158375
+valid Loss:0.0180637
+Time 1m 31s
+
+Epoch 100/100:
+train Loss:0.0160642
+valid Loss:0.0186819
+Time 1m 31s
+
+
+Dice Score 0.7323282484497886
+
