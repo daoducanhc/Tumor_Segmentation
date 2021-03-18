@@ -46,7 +46,7 @@ name = 'outputs/UNet'
 classifier = classifier.TumorClassifier(model, device)
 
 model.train()
-history = classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=50, name=name)
+history = classifier.train(train_loader, valid_loader, learning_rate=0.001, epochs=100, name=name)
 
 model.eval()
 score = classifier.test(test_loader)

@@ -24,7 +24,7 @@ class TumorClassifier():
         }
 
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
-        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=15, gamma=0.3)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=30, gamma=0.3)
         print('Starting...')
 
         for epoch in range(epochs):
