@@ -19,7 +19,6 @@
 
 ![Python](https://img.shields.io/badge/python-v3.8.6-blue.svg?logo=python)
 ![PyTorch](https://img.shields.io/badge/PyTorch-v1.7.0-critical.svg?logo=pytorch)
-![torchvision](https://img.shields.io/badge/torchvision-v0.8.1-orange.svg?logo=torchvision)
 ![cuda](https://img.shields.io/badge/cuda-v11.0.221-success.svg?logo=nvidia)
 ![matplotlib](https://img.shields.io/badge/matplotlib-v3.3.3-9cf.svg?logo=matplotlib)
 ![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?logo=license)
@@ -27,10 +26,22 @@
 ## About The Project
 
 
+## Training Process
+### UNet
+![Loss Graph](demo/loss_UNet.png)
+
+### ResUNet
+![Loss Graph](demo/loss_ResUNet.png)
 
 ## Results
+.                |  UNet        |      ResUNet
+:---------------:|:------------:|:----------------:
+Mean Dice score  |   0.73       |       **0.76**
+Number of epoch  |    100       |       **35**
 
-.             |  .
+
+## Demo
+.             |      .
 :-------------------------:|:-------------------------:
 ![](demo/14.jpg)  |  ![](demo/1.jpg)
 ![](demo/2.jpg)  |  ![](demo/3.jpg)
