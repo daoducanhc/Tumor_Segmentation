@@ -34,10 +34,10 @@
 ![Loss Graph](demo/loss_ResUNet.png)
 
 ## Results
-.                |  UNet        |      ResUNet
+ . |UNet <br /> [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)|ResUNet <br /> [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
 :---------------:|:------------:|:----------------:
 Mean Dice score  |   0.73       |       **0.76**
-Number of epoch  |    100       |       **35**
+Number of epochs  |    100       |       **35**
 
 
 ## Demo
