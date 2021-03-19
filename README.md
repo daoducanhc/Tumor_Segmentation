@@ -17,11 +17,11 @@
 </p>
 
 
-![Python](https://img.shields.io/badge/python-v3.8.6-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-v1.7.0-critical.svg)
-![torchvision](https://img.shields.io/badge/torchvision-v0.8.1-orange.svg)
-![cuda](https://img.shields.io/badge/cuda-v11.0.221-success.svg)
-![matplotlib](https://img.shields.io/badge/matplotlib-v3.3.3-9cf.svg)
+![Python](https://img.shields.io/badge/python-v3.8.6-blue.svg?logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-v1.7.0-critical.svg?logo=pytorch)
+![torchvision](https://img.shields.io/badge/torchvision-v0.8.1-orange.svg?logo=torchvision)
+![cuda](https://img.shields.io/badge/cuda-v11.0.221-success.svg?logo=nvidia)
+![matplotlib](https://img.shields.io/badge/matplotlib-v3.3.3-9cf.svg?logo=matplotlib)
 
 
 ## Results
