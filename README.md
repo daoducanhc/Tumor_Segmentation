@@ -8,7 +8,7 @@
   
   <p align="center">
     <br />
-    <a href="https://github.com/daoducanhc/Tumor_Segmentation/README.md#results">View Demo</a>
+    <a href="https://github.com/daoducanhc/Tumor_Segmentation#results">View Demo</a>
     ·
     <a href="https://github.com/daoducanhc/Tumor_Segmentation/issues">Report Bug</a>
     ·
