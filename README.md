@@ -27,12 +27,12 @@
 [![license](https://img.shields.io/badge/License-MIT-lightgrey.svg?logo=license)](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/LICENSE)
 
 
-## About The Project
+## :brain: About The Project
 The Brain Tumor Segmentation project utilize Deep Learning to help doctors in the segmentation process. 
 
 System built with PyTorch in order to examine two model architectures: **UNet** and **ResUNet**.
 
-## Why we need to consider these 2 models?
+## :hammer_and_wrench: Why we need to consider these 2 models?
 
 ### UNet
 
@@ -53,7 +53,7 @@ We do not apply ResBlock in both the encoder and decoder part of U-Net because i
 ![image](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/ResUNet.PNG)
 
 Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/reference.pdf)
-## Training Process
+## :chart_with_upwards_trend: Training Process
 ### UNet
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
 ![Loss Graph](demo/loss_UNet.png)
@@ -62,18 +62,18 @@ Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/ma
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
 ![Loss Graph](demo/loss_ResUNet.png)
 
-## Results
+## :key: Results
  .                 |      UNet    |     ResUNet 
 :---------------:|:------------:|:----------------:
-Training loss     |   0.0171 |     **0.0161**
-Validation loss   |   0.0174 |     **0.0170**
-Mean Dice score  |   0.73       |       **0.76**
-Number of epochs  |    100       |       **35**
+Training loss     |   0.0171 |     **0.0161***
+Validation loss   |   0.0174 |     **0.0170***
+Mean Dice score  |   0.73       |       **0.76***
+Number of epochs  |    100       |       **35***
 
 <Why we have this result?>
 
 
-## Demo
+## :clapper: Demo
 .             |      .
 :-------------------------:|:-------------------------:
 ![](demo/14.jpg)  |  ![](demo/1.jpg)
@@ -83,3 +83,5 @@ Number of epochs  |    100       |       **35**
 ![](demo/8.jpg)  |  ![](demo/9.jpg)
 ![](demo/10.jpg)  |  ![](demo/11.jpg)
 ![](demo/12.jpg)  |  ![](demo/13.jpg)
+
+## :balance_scale: License
