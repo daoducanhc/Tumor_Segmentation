@@ -12,9 +12,9 @@
     ·
     <a href="https://github.com/daoducanhc/Tumor_Segmentation/issues">Request Feature</a>
     .
-    <a href="https://github.com/daoducanhc/Tumor_Segmentation#results">Results</a>
+    <a href="https://github.com/daoducanhc/Tumor_Segmentation#key-results">Results</a>
     ·
-    <a href="https://github.com/daoducanhc/Tumor_Segmentation#demo">Demo</a>
+    <a href="https://github.com/daoducanhc/Tumor_Segmentation#clapper-demo">Demo</a>
     ·
   </p>
 </p>
@@ -24,7 +24,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-v1.7.0-critical.svg?logo=pytorch)](https://pytorch.org/get-started/previous-versions/#v170)
 [![cuda](https://img.shields.io/badge/CUDA-v11.0.221-success.svg?logo=nvidia)](https://developer.nvidia.com/cuda-11.0-download-archive)
 [![matplotlib](https://img.shields.io/badge/Matplotlib-v3.3.3-9cf.svg?logo=matplotlib)](https://matplotlib.org/3.3.3/contents.html)
-[![license](https://img.shields.io/badge/License-MIT-lightgrey.svg?logo=license)](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/License-MIT-lightgrey.svg?logo=license)](https://github.com/daoducanhc/Tumor_Segmentation#balance_scale-license)
 
 
 ## :brain: About The Project
