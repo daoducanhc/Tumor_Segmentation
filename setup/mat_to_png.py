@@ -22,8 +22,3 @@ def save_image_data(filename, path, data):
 root = 'C:/Users/Admin/Desktop/Downloads/brain_tumor/data/'
 read_path = os.path.join(root, 'mat_dataset')
 save_path = os.path.join(root, 'png_dataset')
-
-# for filename in tqdm(range(1, 3064+1)):
-#     filename = str(filename)
-#     data = get_image_data(filename, read_path)
-#     save_image_data(str(int(filename)-1), save_path, data)
