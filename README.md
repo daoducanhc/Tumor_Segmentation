@@ -54,6 +54,18 @@ We do not apply ResBlock in both the encoder and decoder part of U-Net because i
 
 Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/reference.pdf)
 ## :chart_with_upwards_trend: Training Process
+
+In both 2 charts, you can see sometime my valid loss is lower than train loss. Don't jump to the conclusion that it's wrong.
+<br />
+<br />
+There a 3 main reasons for that:
+
+  - Regularization applied during training, but not during validation/testing. [[Source]](https://twitter.com/aureliengeron/status/1110839345609465856?s=20)
+
+  - Training loss is measured _during_ each epoch while validation loss is measured _after_ each epoch. [[Source]](https://twitter.com/aureliengeron/status/1110839480024338432?s=20)
+
+  - The validation set may be easier than the training set. [[Source]](https://twitter.com/aureliengeron/status/1110839534013472769?s=20)
+
 ### UNet
 
 Learning rate: 0.001 (reduce 70% after each 30 epochs)
@@ -61,8 +73,9 @@ Learning rate: 0.001 (reduce 70% after each 30 epochs)
 Total time: 2 hours 28 minutes
 
 ![Loss Graph](demo/loss_UNet.png)
-
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
+
+
 
 ### ResUNet
 
@@ -71,7 +84,6 @@ Learning rate: 0.001 (reduce 70% after each 15 epochs)
 Total time: 58 minutes
 
 ![Loss Graph](demo/loss_ResUNet.png)
-
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
 
 
@@ -90,6 +102,9 @@ Achieves dice score of **0.76** only in **35** epochs. The training time reduce 
 
 
 ## :clapper: Demo
+
+Here are some top score results that we evaluate ResUNet model with testing dataset.
+
 .             |      .
 :-------------------------:|:-------------------------:
 ![](demo/14.jpg)  |  ![](demo/1.jpg)
