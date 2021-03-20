@@ -55,17 +55,22 @@ We do not apply ResBlock in both the encoder and decoder part of U-Net because i
 Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/reference.pdf)
 ## Training Process
 ### UNet
+[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
 ![Loss Graph](demo/loss_UNet.png)
 
 ### ResUNet
+[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
 ![Loss Graph](demo/loss_ResUNet.png)
 
 ## Results
  .                 |      UNet    |     ResUNet 
 :---------------:|:------------:|:----------------:
+Training loss     |   0.0171 |     **0.0161**
+Validation loss   |   0.0174 |     **0.0170**
 Mean Dice score  |   0.73       |       **0.76**
 Number of epochs  |    100       |       **35**
-Histoty           | [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet) | [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
+
+<Why we have this result?>
 
 
 ## Demo
