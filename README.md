@@ -12,7 +12,7 @@
     ·
     <a href="https://github.com/daoducanhc/Tumor_Segmentation/issues">Request Feature</a>
     .
-    <a href="https://github.com/daoducanhc/Tumor_Segmentation#key-results">Results</a>
+    <a href="https://github.com/daoducanhc/Tumor_Segmentation#dart-results">Results</a>
     ·
     <a href="https://github.com/daoducanhc/Tumor_Segmentation#clapper-demo">Demo</a>
     ·
@@ -53,6 +53,13 @@ We do not apply ResBlock in both the encoder and decoder part of U-Net because i
 ![image](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/ResUNet.PNG)
 
 Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/reference.pdf)
+
+## :books: Data
+
+Dataset is stored in the binary data container format that the MATLAB program uses (.mat file) [[link]](https://figshare.com/articles/dataset/brain_tumor_dataset/1512427)
+
+It's contains 3064 brain MRI images and coordinates of tumor for each image (Data is labeled). Each image has dimension ```512 x 512 x 1```.
+
 ## :chart_with_upwards_trend: Training Process
 
 In both 2 charts, you can see sometime my valid loss is lower than train loss. Don't jump to the conclusion that it's wrong.
@@ -87,7 +94,7 @@ Total time: 58 minutes
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
 
 
-## :key: Results
+## :dart: Results
  .                 |      UNet    |     ResUNet 
 :---------------:|:------------:|:----------------:
 Training loss     |   0.0171 |     **0.0161***
