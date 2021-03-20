@@ -55,12 +55,19 @@ We do not apply ResBlock in both the encoder and decoder part of U-Net because i
 Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/demo/reference.pdf)
 ## :chart_with_upwards_trend: Training Process
 ### UNet
-[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
+
+Learning rate: 0.001 (reduce 70% for each 30 epochs)
 ![Loss Graph](demo/loss_UNet.png)
 
+[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
+
 ### ResUNet
-[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
+
+Learning rate: 0.001 (reduce 70% for each 15 epochs)
 ![Loss Graph](demo/loss_ResUNet.png)
+
+[Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
+
 
 ## :key: Results
  .                 |      UNet    |     ResUNet 
