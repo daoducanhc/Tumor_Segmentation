@@ -56,14 +56,20 @@ Image source: [[paper]](https://github.com/daoducanhc/Tumor_Segmentation/blob/ma
 ## :chart_with_upwards_trend: Training Process
 ### UNet
 
-Learning rate: 0.001 (reduce 70% for each 30 epochs)
+Learning rate: 0.001 (reduce 70% after each 30 epochs)
+
+Total time: 2 hours 28 minutes
+
 ![Loss Graph](demo/loss_UNet.png)
 
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyUNet)
 
 ### ResUNet
 
-Learning rate: 0.001 (reduce 70% for each 15 epochs)
+Learning rate: 0.001 (reduce 70% after each 15 epochs)
+
+Total time: 58 minutes
+
 ![Loss Graph](demo/loss_ResUNet.png)
 
 [Detail here](https://github.com/daoducanhc/Tumor_Segmentation/blob/master/outputs/historyResUNet)
@@ -77,7 +83,10 @@ Validation loss   |   0.0174 |     **0.0170***
 Mean Dice score  |   0.73       |       **0.76***
 Number of epochs  |    100       |       **35***
 
-<Why we have this result?>
+Hyperparameters tuning are almost the same (difference in learning rate scheduler). Hence, we can see how remarkably effective ResBlock is.
+
+Achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ('58 minutes' to '2 hours 28 minutes') while train with origin UNet.
+
 
 
 ## :clapper: Demo
@@ -92,3 +101,4 @@ Number of epochs  |    100       |       **35***
 ![](demo/12.jpg)  |  ![](demo/13.jpg)
 
 ## :balance_scale: License
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
