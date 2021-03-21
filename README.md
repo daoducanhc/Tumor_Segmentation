@@ -125,13 +125,17 @@ Number of epochs  |    100       |       **35***
 
 Hyperparameters tuning are almost the same (difference in learning rate scheduler). Hence, we can see how remarkably effective ResBlock is.
 
-The ResUNet model achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ("2 hours 28 minutes" to "58 minutes") while training with origin UNet.
+The ResUNet model achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ("2 hours 28 minutes" to "**58 minutes**") while training with origin UNet.
 
 
 
 ## :clapper: Demo
 
 Here are some top score results that we evaluate ResUNet model with testing dataset.
+
+Some samples like 1837.png and 682.png, despite of having good dice score, they are still predict wrong area (area that detach from true tumor). To restrict it, we tend to apply region of interest (ROI) while training model.
+
+Overall, this project is quite a success in segmenting brain tumors.
 
 .             |      .
 :-------------------------:|:-------------------------:
