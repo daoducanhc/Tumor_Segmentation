@@ -125,7 +125,7 @@ Number of epochs  |    100       |       **35***
 
 Hyperparameters tuning are almost the same (difference in learning rate scheduler). Hence, we can see how remarkably effective ResBlock is.
 
-The ResUNet model achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ("2 hours 28 minutes" to "**58 minutes**") while training with origin UNet.
+The ResUNet model achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ("2 hours 28 minutes" to "**58 minutes**") while training with original UNet.
 
 
 
