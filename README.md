@@ -42,13 +42,13 @@ The system is built with PyTorch in order to examine two model architectures: **
 
 Owned a unique U-shaped, U-Net consists of a contracting path (encoder) to capture context and a symmetric expanding path (decoder) that enables exact localization. 
 
-Was created for specific task, U-Net can yield more precise segmentation despite fewer training samples.
+Was created for a specific task, U-Net can yield more precise segmentation despite fewer training samples.
 
 ### ResUNet
 
 Replacing encoder path of original U-Net architecture by state-of-the-art model: ResNet. 
 
-We do not apply ResBlock in both the encoder and decoder part of U-Net because it may create a too complex model that our data is overfit so quickly.
+We do not apply ResBlock in both the encoder and decoder part of U-Net because it may create a too complex model that our data is overfitting quickly.
 
 ![image](demo/ResUNet.PNG)
 
@@ -58,9 +58,9 @@ Image source: [[paper]](demo/reference.pdf)
 
 Dataset is stored in the binary data container format that the MATLAB program uses (.mat file) [[link]](https://figshare.com/articles/dataset/brain_tumor_dataset/1512427)
 
-It's contains 3064 brain MRI images and coordinates of tumor for each image (Data is labeled). Each image has dimension ```512 x 512 x 1```.
+It contains 3064 brain MRI images and coordinates of each image's tumor (Data is labeled). Each image has a dimension of ```512 x 512 x 1```.
 
-We transform .mat type dataset to .png images that can be easily worked with.
+We transform the .mat type dataset to .png images that can efficiently operate.
 
 MRI - medical image         |  Tumor labeled by the doctor
 :-------------------------:|:-------------------------:
@@ -68,13 +68,13 @@ MRI - medical image         |  Tumor labeled by the doctor
 
 ## :dart:	Goal
 
-After dataset is fit to the model, we want the machine can recreate the tumor segmentation as same as possible to the original one.
+After the dataset fits the model, we want the machine to recreate the tumor segmentation as exact as possible to the original one.
 
 ![](demo/224_demo.PNG)
 
-For evaluate how good our model is, we using [Dice score](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient) - a statistic used to gauge the similarity of two samples.
+To evaluate how good our model is, we using [Dice score](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient) - a statistic used to gauge the similarity of two samples.
 
-This is the version of dice score for binary segmentation task:
+This equation is the version of the dice score for the binary segmentation task:
 
 ![](demo/Dice_score.PNG)
 (\#: number of)
@@ -83,20 +83,20 @@ The bigger the dice score value, the preciser the model will perform.
 
 ## :chart_with_upwards_trend: Training Process
 
-In both 2 charts, you can see sometime my validation loss is lower than training loss. Don't jump to the conclusion.
+In both two charts, you can sometimes see my validation loss is lower than training loss. Don't jump to a conclusion.
 <br />
 <br />
-There a 3 main reasons for that:
+There a three main reasons for that:
 
   - Regularization is applied during training, but not during validation/testing. [[Source]](https://twitter.com/aureliengeron/status/1110839345609465856?s=20)
 
-  - Training loss is measured _during_ each epoch while validation loss is measured _after_ each epoch. [[Source]](https://twitter.com/aureliengeron/status/1110839480024338432?s=20)
+  - Training loss is measured _during_ each epoch, while validation loss is measured _after_ each epoch. [[Source]](https://twitter.com/aureliengeron/status/1110839480024338432?s=20)
 
   - The validation set may be easier than the training set. [[Source]](https://twitter.com/aureliengeron/status/1110839534013472769?s=20)
 
 ### UNet
 
-Learning strategy: start at 0.001, reduce 70% after each 30 epochs.
+Learning strategy: start at 0.001, reduce 70% after every 30 epochs.
 
 Total time: 2 hours 28 minutes
 
@@ -107,7 +107,7 @@ Total time: 2 hours 28 minutes
 
 ### ResUNet
 
-Learning strategy: start at 0.001, reduce 70% after each 15 epochs.
+Learning strategy: start at 0.001, reduce 70% after every 15 epochs.
 
 Total time: 58 minutes
 
@@ -125,15 +125,15 @@ Number of epochs  |    100       |       **35***
 
 Hyperparameters tuning are almost the same (difference in learning rate scheduler). Hence, we can see how remarkably effective ResBlock is.
 
-The ResUNet model achieves dice score of **0.76** only in **35** epochs. The training time reduce by more than 2 times ("2 hours 28 minutes" to "**58 minutes**") while training with original UNet.
+The ResUNet model achieves a dice score of **0.76** only in **35** epochs. The training time reduces by more than two times ("2 hours 28 minutes" to "**58 minutes**") while training with the original UNet.
 
 
 
 ## :clapper: Demo
 
-Here are some top score results that we evaluate ResUNet model with testing dataset.
+Here are some top score results that we evaluate ResUNet model with the testing dataset.
 
-Some samples like 1837.png and 682.png, despite of having good dice score, they are still predict wrong area (area that detach from true tumor). To restrict it, we tend to apply region of interest (ROI) while training model.
+Some samples like 1837.png and 682.png, despite having a good dice score, still predict the wrong area (the area that detaches from the actual tumor). To restrict it, we tend to apply the region of interest (ROI) while training the model.
 
 Overall, this project is quite a success in segmenting brain tumors.
 
