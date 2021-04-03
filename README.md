@@ -74,7 +74,7 @@ After the dataset fits the model, we want the machine to recreate the tumor segm
 
 To evaluate how good our model is, we using [Dice score](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient) - a statistic used to gauge the similarity of two samples.
 
-This equation is the version of the dice score for the binary segmentation task:
+This equation is the version of the dice score for the gray image segmentation task:
 
 ![](demo/Dice_score.PNG)
 (\#: number of)
